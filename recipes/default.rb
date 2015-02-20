@@ -31,16 +31,18 @@ file ::File.join(node['kibana']['dir'], 'kibana', 'config', 'kibana.yml') do
   owner node['kibana']['user']
   group node['kibana']['gorup']
   mode '0755'
-  notifies :restart, 'runit_service[kibana]'
+#  notifies :restart, 'runit_service[kibana]'
 end
 
-include_recipe 'runit'
 
-runit_service 'kibana' do
-  default_logger true
-  options(
-    'user' => node['kibana']['user'],
-    'home' => ::File.join(node['kibana']['dir'], 'kibana')
-  )
-  action [:enable, :start]
-end
+
+# include_recipe 'runit'
+# 
+# runit_service 'kibana' do
+#   default_logger true
+#   options(
+#     'user' => node['kibana']['user'],
+#     'home' => ::File.join(node['kibana']['dir'], 'kibana')
+#   )
+#   action [:enable, :start]
+# end

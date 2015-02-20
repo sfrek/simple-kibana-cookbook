@@ -2,7 +2,7 @@
 default['kibana']['config']['port'] = 5601
 
 # The host to bind the server to.
-default['kibana']['config']['host'] = '0.0.0.0'
+default['kibana']['config']['host'] = '127.0.0.1'
 
 # The Elasticsearch instance to use for all your queries.
 default['kibana']['config']['elasticsearch'] = 'http://localhost:9200'
